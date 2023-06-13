@@ -1,0 +1,446 @@
+{
+	"id": 0,
+	"name": "index.md",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "Options",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"children": [
+				{
+					"id": 8,
+					"name": "exclude",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "A single file, or array of files to exclude when minifying."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 21,
+							"character": 1,
+							"url": "https://github.com/saqqdy/rollup-plugin-require-css/blob/6166521/src/index.ts#L21"
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": 7,
+					"name": "include",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "A single file, or array of files to include when minifying."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 17,
+							"character": 1,
+							"url": "https://github.com/saqqdy/rollup-plugin-require-css/blob/6166521/src/index.ts#L17"
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": 6,
+					"name": "output",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "An output file name for the css bundle."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 13,
+							"character": 1,
+							"url": "https://github.com/saqqdy/rollup-plugin-require-css/blob/6166521/src/index.ts#L13"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 9,
+					"name": "styleSheet",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "All css files being imported with a variable will use native CSS Modules."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 25,
+							"character": 1,
+							"url": "https://github.com/saqqdy/rollup-plugin-require-css/blob/6166521/src/index.ts#L25"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 2,
+					"name": "transform",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 9,
+							"character": 1,
+							"url": "https://github.com/saqqdy/rollup-plugin-require-css/blob/6166521/src/index.ts#L9"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 3,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "index.ts",
+									"line": 9,
+									"character": 13,
+									"url": "https://github.com/saqqdy/rollup-plugin-require-css/blob/6166521/src/index.ts#L9"
+								}
+							],
+							"signatures": [
+								{
+									"id": 4,
+									"name": "__type",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The transform function is used for processing the CSS, it receives a string containing the code to process as an argument. The function should return a string."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "index.ts",
+											"line": 9,
+											"character": 13,
+											"url": "https://github.com/saqqdy/rollup-plugin-require-css/blob/6166521/src/index.ts#L9"
+										}
+									],
+									"parameters": [
+										{
+											"id": 5,
+											"name": "code",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							]
+						}
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						8,
+						7,
+						6,
+						9,
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 5,
+					"character": 17,
+					"url": "https://github.com/saqqdy/rollup-plugin-require-css/blob/6166521/src/index.ts#L5"
+				}
+			]
+		},
+		{
+			"id": 10,
+			"name": "default",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 34,
+					"character": 9,
+					"url": "https://github.com/saqqdy/rollup-plugin-require-css/blob/6166521/src/index.ts#L34"
+				}
+			],
+			"signatures": [
+				{
+					"id": 11,
+					"name": "default",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "A rollup plugin for import css"
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@returns",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Plugin - requireCss plugin"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 34,
+							"character": 0,
+							"url": "https://github.com/saqqdy/rollup-plugin-require-css/blob/6166521/src/index.ts#L34"
+						}
+					],
+					"parameters": [
+						{
+							"id": 12,
+							"name": "options",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "options"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"target": 1,
+								"name": "Options",
+								"package": "rollup-plugin-require-css"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"sourceFileName": "node_modules/.pnpm/rollup@3.23.0/node_modules/rollup/dist/rollup.d.ts",
+							"qualifiedName": "Plugin"
+						},
+						"name": "Plugin",
+						"package": "rollup"
+					}
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Interfaces",
+			"children": [
+				1
+			]
+		},
+		{
+			"title": "Functions",
+			"children": [
+				10
+			]
+		}
+	],
+	"packageName": "rollup-plugin-require-css",
+	"packageVersion": "1.0.0-beta.1",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "<div style=\"text-align: center;\" align=\"center\">\n\n# rollup-plugin-require-css\n\nA rollup plugin for import css\n\n[![NPM version][npm-image]][npm-url]\n[![Codacy Badge][codacy-image]][codacy-url]\n[![Test coverage][codecov-image]][codecov-url]\n[![npm download][download-image]][download-url]\n[![License][license-image]][license-url]\n\n[![Sonar][sonar-image]][sonar-url]\n\n</div>\n\n<div style=\"text-align: center; margin-bottom: 20px;\" align=\"center\">\n\n### **[Documentation](https://www.saqqdy.com/rollup-plugin-require-css)** • **[Change Log](./CHANGELOG.md)**\n\n</div>\n\n## Installing\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\n# use pnpm\n$ pnpm install -D rollup-plugin-require-css\n\n# use npm\n$ npm install -D rollup-plugin-require-css\n\n# use yarn\n$ yarn add -D rollup-plugin-require-css\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Usage\n\n1. use import\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```js\n// rollup.config.js\nimport requireCss from 'rollup-plugin-require-css'\n\nexport default {\n  plugins: [requireCss(options)]\n}\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n2. use require\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```js\n// rollup.config.js\nconst requireCss = require('rollup-plugin-require-css')\n\nmodule.exports = {\n  plugins: [requireCss(options)]\n}\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Types\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\ninterface Options {\n  /**\n   * The transform function is used for processing the CSS, it receives a string containing the code to process as an argument. The function should return a string.\n   */\n  transform?: (code: string) => string\n  /**\n   * An output file name for the css bundle.\n   */\n  output?: string\n  /**\n   * A single file, or array of files to include when minifying.\n   */\n  include?: string | string[]\n  /**\n   * A single file, or array of files to exclude when minifying.\n   */\n  exclude?: string | string[]\n  /**\n   * All css files being imported with a variable will use native CSS Modules.\n   */\n  styleSheet?: boolean\n}\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Support & Issues\n\nPlease open an issue [here](https://github.com/saqqdy/rollup-plugin-require-css/issues).\n\n## License\n\n[MIT](LICENSE)\n\n[npm-image]: https://img.shields.io/npm/v/rollup-plugin-require-css.svg?style=flat-square\n[npm-url]: https://npmjs.org/package/rollup-plugin-require-css\n[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696\n[codacy-url]: https://www.codacy.com/gh/saqqdy/rollup-plugin-require-css/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/rollup-plugin-require-css&utm_campaign=Badge_Grade\n[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/rollup-plugin-require-css.svg?style=flat-square\n[codecov-url]: https://codecov.io/github/saqqdy/rollup-plugin-require-css?branch=master\n[download-image]: https://img.shields.io/npm/dm/rollup-plugin-require-css.svg?style=flat-square\n[download-url]: https://npmjs.org/package/rollup-plugin-require-css\n[license-image]: https://img.shields.io/badge/License-MIT-blue.svg\n[license-url]: LICENSE\n[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_rollup-plugin-require-css\n[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_rollup-plugin-require-css"
+		}
+	],
+	"symbolIdMap": {
+		"0": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": ""
+		},
+		"1": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "Options"
+		},
+		"2": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "Options.transform"
+		},
+		"3": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "__type"
+		},
+		"4": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "__type"
+		},
+		"5": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "code"
+		},
+		"6": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "Options.output"
+		},
+		"7": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "Options.include"
+		},
+		"8": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "Options.exclude"
+		},
+		"9": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "Options.styleSheet"
+		},
+		"10": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "requireCss"
+		},
+		"11": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "requireCss"
+		},
+		"12": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "options"
+		}
+	}
+}
