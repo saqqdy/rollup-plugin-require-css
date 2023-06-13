@@ -42,12 +42,7 @@ $ yarn add -D rollup-plugin-require-css
 import requireCss from 'rollup-plugin-require-css'
 
 export default {
-  plugins: [
-    requireCss({
-      path: './node_modules/axios-serializer/dist/index.min.js',
-      position: 'before'
-    })
-  ]
+  plugins: [requireCss(options)]
 }
 ```
 
@@ -58,104 +53,34 @@ export default {
 const requireCss = require('rollup-plugin-require-css')
 
 module.exports = {
-  plugins: [
-    requireCss({
-      path: './node_modules/axios-serializer/dist/index.min.js',
-      position: 'before'
-    })
-  ]
+  plugins: [requireCss(options)]
 }
 ```
 
 ## Types
 
 ```ts
-import type { Plugin } from 'rollup'
-
-export interface MinifyOptions {
-  compress?: boolean | CompressOptions
-  ecma?: ECMA
-  enclose?: boolean | string
-  ie8?: boolean
-  keep_classnames?: boolean | RegExp
-  keep_fnames?: boolean | RegExp
-  mangle?: boolean | MangleOptions
-  module?: boolean
-  nameCache?: object
-  format?: FormatOptions
-  /** @deprecated */
-  output?: FormatOptions
-  parse?: ParseOptions
-  safari10?: boolean
-  sourceMap?: boolean | SourceMapOptions
-  toplevel?: boolean
-}
-
-/**
- * A rollup plugin for import css
- *
- * @param options - options
- * @returns Plugin - requireCss plugin
- */
-declare function requireCss(options: OptionsPath): Plugin
-
-declare function requireCss(options: OptionsCode): Plugin
-export default requireCss
-
-export declare interface Options {
+interface Options {
   /**
-   * for es6 import
-   *
-   * @example ''
+   * The transform function is used for processing the CSS, it receives a string containing the code to process as an argument. The function should return a string.
    */
+  transform?: (code: string) => string
   /**
-   * for es6 export
-   *
-   * @example ''
+   * An output file name for the css bundle.
    */
+  output?: string
   /**
-   * for node require
-   *
-   * @example ''
+   * A single file, or array of files to include when minifying.
    */
+  include?: string | string[]
   /**
-   * for node exports
-   *
-   * @example ''
+   * A single file, or array of files to exclude when minifying.
    */
-  position?: 'before' | 'after'
+  exclude?: string | string[]
   /**
-   * A string to prepend to the bundle
+   * All css files being imported with a variable will use native CSS Modules.
    */
-  intro?: string
-  /**
-   * A string to append to the bundle
-   */
-  outro?: string
-  /**
-   * minify the codes
-   */
-  minify?: boolean
-  /**
-   * minify options for terser
-   */
-  minifyOptions?: MinifyOptions
-}
-
-export declare interface OptionsCode extends Options {
-  /**
-   * inject code string
-   * @description Only one of “path” and “code” needs to be passed in, and "path" has higher priority than "code" when both are passed in
-   */
-  code: string
-}
-
-export declare interface OptionsPath extends Options {
-  /**
-   * inject code path
-   * @description Only one of “path” and “code” needs to be passed in, and "path" has higher priority than "code" when both are passed in
-   */
-  path: string
+  styleSheet?: boolean
 }
 ```
 
