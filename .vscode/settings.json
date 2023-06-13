@@ -1,0 +1,27 @@
+{
+	"cSpell.words": [
+		"Builtins",
+		"consola",
+		"esbuild",
+		"esno",
+		"filesize",
+		"hashbang",
+		"iife",
+		"onwarn",
+		"outro",
+		"pluginutils",
+		"saqqdy",
+		"tscjs",
+		"tsdoc",
+		"tsnd",
+		"typedoc",
+		"unpub",
+		"unpublish",
+		"vuepress"
+	],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"npm.packageManager": "yarn"
+}

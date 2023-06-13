@@ -1,0 +1,9 @@
+{
+	"exclude": [
+		"consola",
+		"chalk",
+		"ora"
+	],
+	"packageManager": "pnpm",
+	"registry": "https://registry.npmmirror.com"
+}
