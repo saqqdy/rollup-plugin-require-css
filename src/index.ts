@@ -32,7 +32,7 @@ export interface Options {
  * @returns Plugin - requireCss plugin
  */
 function requireCss(options: Options): Plugin {
-	const styles: Record<string, any> = {}
+	const styles: Record<string, string> = {}
 	const filter = createFilter(options.include ?? ['**/*.css'], options.exclude ?? [])
 
 	/* function to sort the css imports in order - credit to rollup-plugin-postcss */
