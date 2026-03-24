@@ -2,7 +2,7 @@
 
 # rollup-plugin-require-css
 
-A rollup plugin for import css
+A powerful rollup plugin for importing CSS with CSS Modules, preprocessors, and more
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
@@ -20,6 +20,18 @@ A rollup plugin for import css
 
 </div>
 
+## Features
+
+- 🎨 **CSS Modules** - Auto-detect or force enable CSS Modules with scoped class names
+- 📦 **Preprocessor Support** - Sass/SCSS, Less, Stylus out of the box
+- ⚡ **PostCSS Integration** - Use any PostCSS plugins like autoprefixer
+- 🗺️ **Source Maps** - Generate accurate source maps for debugging
+- 🔥 **HMR Support** - Hot Module Replacement for development
+- ✂️ **Code Splitting** - Split CSS by entry points
+- 💾 **Caching** - Speed up rebuilds with file cache
+- 🗜️ **Minification** - Advanced CSS minification options
+- 🔌 **Plugin API** - Access styles, CSS modules, and stats programmatically
+
 ## Installing
 
 ```bash
@@ -35,53 +47,264 @@ $ yarn add -D rollup-plugin-require-css
 
 ## Usage
 
-1. use import
+### Basic Usage
 
 ```js
 // rollup.config.js
-import requireCss from 'rollup-plugin-require-css'
+import requireCSS from 'rollup-plugin-require-css'
 
 export default {
-  plugins: [requireCss(options)]
+  plugins: [
+    requireCSS({
+      output: 'style.css',
+      minify: true
+    })
+  ]
 }
 ```
 
-2. use require
+### CSS Modules
 
 ```js
-// rollup.config.js
-const requireCss = require('rollup-plugin-require-css')
+// Auto-detect .module.css files
+import styles from './button.module.css'
 
-module.exports = {
-  plugins: [requireCss(options)]
+console.log(styles.button) // "_button_x5f2a"
+
+// Or force enable for all CSS
+requireCSS({ modules: true })
+```
+
+### With Preprocessors
+
+```js
+// Install the preprocessor first
+// pnpm add -D sass
+
+import './styles.scss'
+import './theme.less'
+import './base.styl'
+
+// In rollup.config.js
+requireCSS({
+  preprocessor: {
+    sass: { includePaths: ['src/styles'] },
+    less: { paths: ['src/styles'] },
+    stylus: { paths: ['src/styles'] }
+  }
+})
+```
+
+### With PostCSS
+
+```js
+// Install postcss and plugins
+// pnpm add -D postcss autoprefixer
+
+requireCSS({
+  postcss: {
+    enabled: true,
+    plugins: [
+      require('autoprefixer')()
+    ]
+  }
+})
+```
+
+### Source Maps
+
+```js
+requireCSS({
+  sourcemap: true,      // Generate inline source map
+  sourcemap: 'inline',  // Inline source map
+  sourcemap: 'external' // External .css.map file
+})
+```
+
+### Code Splitting
+
+```js
+export default {
+  input: ['src/a.js', 'src/b.js'],
+  output: { dir: 'dist', format: 'es' },
+  plugins: [
+    requireCSS({
+      split: true,  // Generate separate CSS per entry
+      output: (chunk) => `${chunk.name}.css`
+    })
+  ]
 }
 ```
 
-## Types
+### Shadow DOM Support
 
-```ts
-interface Options {
-  /**
-   * The transform function is used for processing the CSS, it receives a string containing the code to process as an argument. The function should return a string.
-   */
-  transform?: (code: string) => string
-  /**
-   * An output file name for the css bundle.
-   */
-  output?: string
-  /**
-   * A single file, or array of files to include when minifying.
-   */
-  include?: string | string[]
-  /**
-   * A single file, or array of files to exclude when minifying.
-   */
-  exclude?: string | string[]
-  /**
-   * All css files being imported with a variable will use native CSS Modules.
-   */
-  styleSheet?: boolean
+```js
+import styles from './component.css' assert { type: 'css' }
+
+class MyElement extends HTMLElement {
+  constructor() {
+    super()
+    const shadow = this.attachShadow({ mode: 'open' })
+    shadow.adoptedStyleSheets = [styles]
+  }
 }
+```
+
+## Options
+
+### `output`
+
+- Type: `string | ((chunk: OutputInfo) => string)`
+- Default: Auto-detect from output file name
+
+CSS output file name or a function that returns the file name.
+
+### `inject`
+
+- Type: `boolean`
+- Default: `false`
+
+Inject CSS into the bundle or extract to a separate file.
+
+### `minify`
+
+- Type: `boolean | MinifyOptions`
+- Default: `false`
+
+Enable CSS minification with optional fine-grained control:
+
+```js
+requireCSS({
+  minify: {
+    removeComments: true,
+    collapseWhitespace: true,
+    removeRedundantValues: true,
+    mergeRules: false,
+    optimizeSelectors: false
+  }
+})
+```
+
+### `modules`
+
+- Type: `boolean | CSSModulesOptions`
+- Default: `{ enabled: 'auto' }`
+
+Enable CSS Modules:
+
+```js
+requireCSS({
+  modules: {
+    enabled: true, // or 'auto'
+    generateScopedName: (name, filename, css) => `_${name}_${hash(css)}`,
+    globalModulePaths: [/global\.css$/]
+  }
+})
+```
+
+### `postcss`
+
+- Type: `PostCSSOptions`
+
+Configure PostCSS integration:
+
+```js
+requireCSS({
+  postcss: {
+    enabled: true,
+    plugins: [require('autoprefixer')()],
+    options: {}
+  }
+})
+```
+
+### `preprocessor`
+
+- Type: `PreprocessorOptions`
+
+Configure preprocessor support:
+
+```js
+requireCSS({
+  preprocessor: {
+    sass: { includePaths: ['src'] },
+    less: { paths: ['src'] },
+    stylus: { paths: ['src'] }
+  }
+})
+```
+
+### `sourcemap`
+
+- Type: `boolean | 'inline' | 'external'`
+- Default: `false`
+
+Generate source maps for CSS.
+
+### `split`
+
+- Type: `boolean`
+- Default: `false`
+
+Enable CSS code splitting for multiple entry points.
+
+### `hmr`
+
+- Type: `boolean`
+- Default: `false`
+
+Enable Hot Module Replacement support.
+
+### `cache`
+
+- Type: `boolean | CacheOptions`
+- Default: `false`
+
+Enable caching for faster rebuilds:
+
+```js
+requireCSS({
+  cache: {
+    enabled: true,
+    dir: '.cache/css',
+    ttl: 3600000 // 1 hour
+  }
+})
+```
+
+### `transform`
+
+- Type: `(code: string, id: string) => string | Promise<string>`
+
+Custom transform function for CSS processing.
+
+### `onExtract`
+
+- Type: `(css: string, chunk: OutputInfo) => void`
+
+Callback when CSS is extracted.
+
+## Plugin API
+
+Access plugin internals through the `api` property:
+
+```js
+const plugin = requireCSS()
+
+// Get all collected styles
+plugin.api.getStyles()
+
+// Get CSS Modules class mappings
+plugin.api.getCSSModules()
+
+// Get specific class name
+plugin.api.getClassName('/path/to/file.css', 'button')
+
+// Get statistics
+plugin.api.getStats()
+
+// Clear cache
+plugin.api.clearCache()
 ```
 
 ## Support & Issues

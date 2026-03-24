@@ -1,23 +1,28 @@
 {
 	"compilerOptions": {
-		"target": "es5",
-		"moduleResolution": "node",
-		"lib": ["es5", "es6", "esnext"],
-		"noLib": false,
-		"sourceMap": false,
-		"resolveJsonModule": true,
+		"target": "ES2022",
 		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"lib": ["ES2023"],
+		"types": ["node"],
 		"strict": true,
-		"noImplicitOverride": true,
-		"noUnusedLocals": true,
+		"noEmit": true,
 		"esModuleInterop": true,
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"allowSyntheticDefaultImports": true,
-		"downlevelIteration": true,
-		"paths": {
-			"#lib/*": ["./src/*"]
-		}
+		"skipLibCheck": true,
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"resolveJsonModule": true,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": true,
+		"forceConsistentCasingInFileNames": true
 	},
-	"exclude": ["**/__tests__", "temp"]
+	"include": ["src"],
+	"exclude": ["node_modules", "dist", "test", "scripts"]
 }
