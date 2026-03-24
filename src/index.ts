@@ -554,7 +554,7 @@ export default function requireCSS(options: Options = {}): Plugin {
 			}
 
 			// Helper to extract CSS for an entry
-			const extractCSS = (entryId: string, modules: Record<string, RenderedModule>): string | null => {
+			const extractCSS = (entryId: string, _modules: Record<string, RenderedModule>): string | null => {
 				const moduleIds = getRecursiveImportOrder(entryId, this.getModuleInfo)
 				const extractedStyles: string[] = []
 
