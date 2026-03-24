@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Example - rollup-plugin-require-css</title>
+  <!--
+    CSS 加载方式（二选一）：
+
+    方式 1: <link> 引入提取的 CSS 文件
+    <link rel="stylesheet" href="./dist/style.css">
+
+    方式 2: <script> 自动注入 CSS（当前使用）
+    JS 会通过 mountStyle 将 CSS 动态注入到 <head> 中
+  -->
+  <!-- <link rel="stylesheet" href="./dist/style.css"> -->
+</head>
+<body>
+  <div class="container">
+    <h1>Basic Example</h1>
+    <p>This demonstrates basic CSS import and bundling with minification.</p>
+
+    <div class="component">
+      <h2 class="component-title">Component Card</h2>
+      <p>Styled with CSS from component.css</p>
+    </div>
+
+    <div class="component">
+      <h2 class="component-title">Another Card</h2>
+      <p>Multiple components share the same styles.</p>
+    </div>
+  </div>
+
+  <script src="./dist/index.js"></script>
+</body>
+</html>

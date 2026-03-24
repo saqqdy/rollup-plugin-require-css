@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Splitting Example - rollup-plugin-require-css</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .demo-section {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .entry-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .entry-link {
+      display: block;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .entry-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .entry-link h3 { margin: 0 0 10px; }
+    .entry-link p { margin: 0; opacity: 0.9; font-size: 14px; }
+    .entry-link.admin {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    }
+    code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Code Splitting Example</h1>
+  <p>This demonstrates CSS code splitting for multi-entry builds. Each entry point gets its own CSS bundle.</p>
+
+  <div class="demo-section">
+    <h2>Build Output</h2>
+    <pre><code>dist/
+├── app.js      + app.css    (App entry)
+└── admin.js    + admin.css  (Admin entry)</code></pre>
+    <p>Click the links below to see each entry point with its own CSS bundle.</p>
+  </div>
+
+  <div class="entry-links">
+    <a href="app.html" class="entry-link">
+      <h3>📱 App Entry</h3>
+      <p>Loads app.css only</p>
+    </a>
+    <a href="admin.html" class="entry-link admin">
+      <h3>⚙️ Admin Entry</h3>
+      <p>Loads admin.css only</p>
+    </a>
+  </div>
+
+  <div class="demo-section">
+    <h2>Configuration</h2>
+    <pre><code>// rollup.config.js
+export default {
+  input: ['src/app.js', 'src/admin.js'],
+  output: { dir: 'dist', format: 'es' },
+  plugins: [
+    requireCss({
+      split: true,
+      output: (chunk) => `${chunk.name}.css`
+    })
+  ]
+}</code></pre>
+  </div>
+</body>
+</html>

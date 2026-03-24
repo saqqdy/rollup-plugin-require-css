@@ -1,0 +1,12 @@
+{
+  "name": "shadow-dom-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "rollup": "^4.59.1",
+    "rollup-plugin-require-css": "link:../.."
+  }
+}

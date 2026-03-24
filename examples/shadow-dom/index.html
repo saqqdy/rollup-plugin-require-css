@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow DOM Example - rollup-plugin-require-css</title>
+  <!--
+    CSS 加载方式（二选一）：
+    方式 1: <link> 引入提取的 CSS 文件（当前使用）
+    方式 2: <script> 自动注入 CSS，注释掉 link 即可
+  -->
+  <link rel="stylesheet" href="./dist/style.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .demo-section {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    .info-box {
+      background: #e7f3ff;
+      border: 1px solid #b6d4fe;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Shadow DOM Example</h1>
+  <p>This demonstrates CSSStyleSheet usage for Shadow DOM components with style isolation.</p>
+
+  <div class="demo-section">
+    <h2>Style Isolation Demo</h2>
+    <p>The global CSS sets <code>color: red</code> for <code>h2</code>, but Shadow DOM components are not affected.</p>
+
+    <div class="info-box">
+      <strong>Global h2:</strong>
+      <h2 style="color: red; margin: 10px 0;">This h2 is styled by global CSS (red)</h2>
+    </div>
+
+    <div class="info-box">
+      <strong>Shadow DOM Component:</strong>
+      <my-component></my-component>
+      <p style="font-size: 12px; color: #666; margin-top: 10px;">
+        ↑ This component's h2 is NOT affected by global styles
+      </p>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>How It Works</h2>
+    <pre><code>// Import CSS as CSSStyleSheet
+import styles from './component.css' assert { type: 'css' }
+
+class MyComponent extends HTMLElement {
+  constructor() {
+    super()
+    const shadow = this.attachShadow({ mode: 'open' })
+    shadow.adoptedStyleSheets = [styles]
+    shadow.innerHTML = '...'
+  }
+}</code></pre>
+  </div>
+
+  <script type="module" src="./dist/index.js"></script>
+</body>
+</html>

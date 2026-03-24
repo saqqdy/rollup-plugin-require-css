@@ -1,0 +1,27 @@
+@import 'variables.less';
+
+@text-color: #333;
+@bg-color: #f5f5f5;
+
+.sidebar {
+  width: 250px;
+  background: @bg-color;
+  padding: @spacing;
+  border-radius: @border-radius;
+
+  &-item {
+    padding: 8px 12px;
+    margin: 4px 0;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: darken(@bg-color, 5%);
+    }
+
+    &.active {
+      background: @primary-color;
+      color: white;
+    }
+  }
+}

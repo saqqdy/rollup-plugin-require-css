@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Modules Example - rollup-plugin-require-css</title>
+  <!--
+    CSS Modules 示例使用 <script> 自动注入 CSS
+    因为需要 JS 导出 class name 映射
+  -->
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 { color: #333; }
+    .demo-section {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .info {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 13px;
+      overflow-x: auto;
+    }
+    .mapping {
+      color: #007bff;
+    }
+    .arrow {
+      color: #28a745;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Modules Example</h1>
+  <p>This demonstrates CSS Modules with scoped class names. Open DevTools to see the hashed class names in the DOM.</p>
+
+  <div class="demo-section">
+    <h2>Rendered Components</h2>
+    <p>These elements are styled with CSS Modules. Inspect them to see the scoped class names.</p>
+    <div id="button-demo"></div>
+    <div id="card-demo" style="margin-top: 20px;"></div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Class Name Mappings</h2>
+    <pre class="info" id="class-info">Loading...</pre>
+  </div>
+
+  <script type="module">
+    // The script creates buttons and cards with CSS Module class names
+    // Check dist/index.js to see the class mappings
+
+    // Show class mappings in the info box
+    const info = document.getElementById('class-info')
+    const buttonStyles = { "button": "_button_button", "primary": "_primary_button" }
+    const cardStyles = { "card": "_card_card", "title": "_title_card", "content": "_content_card" }
+
+    info.innerHTML = `<strong>button.module.css</strong>
+${Object.entries(buttonStyles).map(([k, v]) => `  .${k} <span class="arrow">→</span> .<span class="mapping">${v}</span>`).join('\n')}
+
+<strong>card.module.css</strong>
+${Object.entries(cardStyles).map(([k, v]) => `  .${k} <span class="arrow">→</span> .<span class="mapping">${v}</span>`).join('\n')}`
+  </script>
+  <script type="module" src="./dist/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "preprocessors-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "less": "^4.2.0",
+    "rollup": "^4.59.1",
+    "rollup-plugin-require-css": "link:../..",
+    "sass": "^1.72.0",
+    "stylus": "^0.63.0"
+  }
+}

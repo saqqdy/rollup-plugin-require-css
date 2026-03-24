@@ -1,0 +1,17 @@
+@import 'variables.styl'
+
+$font-stack = -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+
+.footer
+  font-family $font-stack
+  padding $spacing
+  background lighten($secondary-color, 30%)
+  border-radius $border-radius
+
+  &-link
+    color $primary-color
+    text-decoration none
+    margin-right 12px
+
+    &:hover
+      text-decoration underline

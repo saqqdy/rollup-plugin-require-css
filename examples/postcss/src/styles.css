@@ -1,0 +1,46 @@
+/* Modern CSS features that need vendor prefixes */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  backdrop-filter: blur(10px);
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.button {
+  appearance: none;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input {
+  appearance: none;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+/* Flexbox gap (needs prefix for older Safari) */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}

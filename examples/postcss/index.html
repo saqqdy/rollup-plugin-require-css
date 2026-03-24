@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostCSS Example - rollup-plugin-require-css</title>
+  <!--
+    CSS 加载方式（二选一）：
+    方式 1: <link> 引入提取的 CSS 文件（当前使用）
+    方式 2: <script> 自动注入 CSS，注释掉 link 即可
+  -->
+  <link rel="stylesheet" href="./dist/styles.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .demo-section {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>PostCSS Example</h1>
+  <p>This demonstrates PostCSS integration with autoprefixer. Check the CSS file to see vendor prefixes added.</p>
+
+  <div class="demo-section">
+    <h2>Flexbox Gap</h2>
+    <code>display: flex; gap: 12px;</code>
+    <div class="flex-container">
+      <div style="background:#007bff;color:white;padding:20px;border-radius:4px;">Item 1</div>
+      <div style="background:#007bff;color:white;padding:20px;border-radius:4px;">Item 2</div>
+      <div style="background:#007bff;color:white;padding:20px;border-radius:4px;">Item 3</div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>CSS Grid</h2>
+    <code>display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</code>
+    <div class="grid">
+      <div style="background:#28a745;color:white;padding:20px;border-radius:4px;">Grid 1</div>
+      <div style="background:#28a745;color:white;padding:20px;border-radius:4px;">Grid 2</div>
+      <div style="background:#28a745;color:white;padding:20px;border-radius:4px;">Grid 3</div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Backdrop Filter</h2>
+    <code>backdrop-filter: blur(10px);</code>
+    <div style="position:relative;height:100px;overflow:hidden;border-radius:8px;">
+      <div style="position:absolute;inset:0;background:linear-gradient(45deg,#ff6b6b,#4ecdc4);"></div>
+      <div class="card" style="position:absolute;top:20px;left:20px;right:20px;padding:20px;background:rgba(255,255,255,0.3);">
+        Card with backdrop-filter blur
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Form Elements</h2>
+    <code>appearance: none;</code>
+    <div class="container" style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button class="button">Custom Button</button>
+      <input class="input" type="text" placeholder="Custom Input">
+    </div>
+  </div>
+
+  <script type="module" src="./dist/index.js"></script>
+</body>
+</html>

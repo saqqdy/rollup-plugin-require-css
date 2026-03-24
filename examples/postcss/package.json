@@ -1,11 +1,14 @@
 {
-  "name": "rollup-v2-example",
+  "name": "postcss-example",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "rollup -c"
   },
   "devDependencies": {
-    "rollup": "^2.78.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "rollup": "^4.59.1",
     "rollup-plugin-require-css": "link:../.."
   }
 }

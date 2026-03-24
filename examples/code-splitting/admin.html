@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Entry - Code Splitting Example</title>
+  <!--
+    CSS 加载方式（二选一）：
+    方式 1: <link> 引入提取的 CSS 文件（当前使用）
+    方式 2: <script> 自动注入 CSS，注释掉 link 即可
+  -->
+  <link rel="stylesheet" href="./dist/admin.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #fafafa;
+    }
+    .demo-section {
+      margin: 20px 0;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+    }
+    .nav { margin-bottom: 20px; }
+    .nav a {
+      margin-right: 15px;
+      padding: 8px 16px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .nav a:hover { background: #0056b3; }
+    .nav a.active { background: #28a745; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="app.html">App Entry</a>
+    <a href="admin.html" class="active">Admin Entry</a>
+  </nav>
+
+  <h1>Code Splitting - Admin Entry</h1>
+  <p>This page loads <code>admin.js</code> and <code>admin.css</code> only.</p>
+
+  <div class="demo-section">
+    <h2>CSS Files Loaded</h2>
+    <ul>
+      <li><code>admin.css</code> - Admin-specific styles</li>
+    </ul>
+    <p><strong>Not loaded:</strong> app.css (separate bundle)</p>
+  </div>
+
+  <div id="admin-root"></div>
+
+  <script type="module" src="./dist/admin.js"></script>
+</body>
+</html>
