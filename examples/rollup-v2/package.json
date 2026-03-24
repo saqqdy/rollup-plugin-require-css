@@ -1,0 +1,11 @@
+{
+  "name": "rollup-v2-example",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "rollup": "^2.78.1",
+    "rollup-plugin-require-css": "link:../.."
+  }
+}
