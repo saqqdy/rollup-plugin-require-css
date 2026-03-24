@@ -1,25 +1,34 @@
-.DS_Store
-.idea/
-coverage
+# Dependencies
 node_modules/
+
+# Build output
 dist/
-es/
-lib/
-docs/
+docs
+
+# Logs
 npm-debug.log
 yarn-error.log
-/test/unit/coverage/
-/test/e2e/reports/
-selenium-debug.log
-
-*.bak
-*.bak.js
-*_bak
-stats.html
+pnpm-debug.log
 
 # Editor directories and files
 .idea
+.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
+
+# Backup files
+*.bak
+*.bak.js
+*_bak
+
+# Test coverage
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# VitePress cache and output
+docs/.vitepress/cache/
+docs/.vitepress/dist/
