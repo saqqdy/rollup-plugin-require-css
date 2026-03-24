@@ -5,18 +5,13 @@
 A powerful rollup plugin for importing CSS with CSS Modules, preprocessors, and more
 
 [![NPM version][npm-image]][npm-url]
-[![Codacy Badge][codacy-image]][codacy-url]
-[![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
-[![License][license-image]][license-url]
-
-[![Sonar][sonar-image]][sonar-url]
 
 </div>
 
 <div style="text-align: center; margin-bottom: 20px;" align="center">
 
-### **[Documentation](https://www.saqqdy.com/rollup-plugin-require-css)** • **[Change Log](./CHANGELOG.md)**
+### **[Change Log](./CHANGELOG.md)** • **[中文文档](./README_CN.md)**
 
 </div>
 
@@ -31,6 +26,21 @@ A powerful rollup plugin for importing CSS with CSS Modules, preprocessors, and 
 - 💾 **Caching** - Speed up rebuilds with file cache
 - 🗜️ **Minification** - Advanced CSS minification options
 - 🔌 **Plugin API** - Access styles, CSS modules, and stats programmatically
+
+## Online Demo / 在线体验
+
+Try examples directly in your browser:
+
+| Example | CodeSandbox | StackBlitz |
+|---------|-------------|------------|
+| basic | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/basic) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/basic) |
+| css-modules | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/css-modules) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/css-modules) |
+| preprocessors | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/preprocessors) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/preprocessors) |
+| postcss | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/postcss) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/postcss) |
+| code-splitting | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/code-splitting) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/code-splitting) |
+| shadow-dom | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/shadow-dom) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/shadow-dom) |
+
+See [examples/](./examples) for more details.
 
 ## Installing
 
@@ -317,13 +327,5 @@ Please open an issue [here](https://github.com/saqqdy/rollup-plugin-require-css/
 
 [npm-image]: https://img.shields.io/npm/v/rollup-plugin-require-css.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/rollup-plugin-require-css
-[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
-[codacy-url]: https://www.codacy.com/gh/saqqdy/rollup-plugin-require-css/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/rollup-plugin-require-css&utm_campaign=Badge_Grade
-[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/rollup-plugin-require-css.svg?style=flat-square
-[codecov-url]: https://codecov.io/github/saqqdy/rollup-plugin-require-css?branch=master
 [download-image]: https://img.shields.io/npm/dm/rollup-plugin-require-css.svg?style=flat-square
 [download-url]: https://npmjs.org/package/rollup-plugin-require-css
-[license-image]: https://img.shields.io/badge/License-MIT-blue.svg
-[license-url]: LICENSE
-[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_rollup-plugin-require-css
-[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_rollup-plugin-require-css

@@ -6,57 +6,71 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-#### New Features
+#### Core Features
 
-- **CSS Modules Support**
-  - Auto-detect `.module.css` files
-  - Force enable with `modules: true`
-  - Custom scoped name generator
-  - Export class name mappings
+- CSS import and bundling support
+- CSSStyleSheet mode for Shadow DOM
+- Custom transform function support
+- Include/exclude file patterns
 
-- **Preprocessor Support**
-  - Sass/SCSS compilation
-  - Less compilation
-  - Stylus compilation
-  - Automatic detection based on file extension
+#### CSS Modules
 
-- **PostCSS Integration**
-  - Use any PostCSS plugins
-  - Configurable options
-  - Source map support
+- Auto-detect `.module.css` files
+- Force enable with `modules: true`
+- Custom scoped name generator
+- Export class name mappings
 
-- **Source Maps**
-  - Inline source maps
-  - External `.css.map` files
-  - Accurate line mappings
+#### Preprocessor Support
 
-- **HMR (Hot Module Replacement)**
-  - Development mode support
-  - Custom HMR events
+- Sass/SCSS compilation
+- Less compilation
+- Stylus compilation
+- Automatic detection based on file extension
 
-- **CSS Code Splitting**
-  - Split CSS by entry points
-  - Dynamic output file names
-  - Per-entry CSS bundles
+#### PostCSS Integration
 
-- **Advanced Minification**
-  - Remove comments
-  - Collapse whitespace
-  - Remove redundant values
-  - Merge rules
-  - Optimize selectors
+- Use any PostCSS plugins
+- Configurable options
+- Source map support
 
-- **Caching System**
-  - File-based cache
-  - Configurable TTL
-  - Cache invalidation
+#### Source Maps
 
-- **Extended Plugin API**
-  - `getStyles()` - Get all collected styles
-  - `getCSSModules()` - Get CSS Modules mappings
-  - `getClassName()` - Get specific class name
-  - `getStats()` - Get processing statistics
-  - `clearCache()` - Clear the cache
+- Inline source maps
+- External `.css.map` files
+- Accurate line mappings
+
+#### HMR (Hot Module Replacement)
+
+- Development mode support
+- Custom HMR events
+
+#### CSS Code Splitting
+
+- Split CSS by entry points
+- Dynamic output file names
+- Per-entry CSS bundles
+
+#### Advanced Minification
+
+- Remove comments
+- Collapse whitespace
+- Remove redundant values
+- Merge rules
+- Optimize selectors
+
+#### Caching System
+
+- File-based cache
+- Configurable TTL
+- Cache invalidation
+
+#### Plugin API
+
+- `getStyles()` - Get all collected styles
+- `getCSSModules()` - Get CSS Modules mappings
+- `getClassName()` - Get specific class name
+- `getStats()` - Get processing statistics
+- `clearCache()` - Clear the cache
 
 ### Changed
 
@@ -68,14 +82,3 @@ All notable changes to this project will be documented in this file.
 
 - Transform function result now properly used
 - Source map format compliance
-
-## [1.0.0-beta.1] - 2023-06-13
-
-### Added
-
-- Initial release
-- Basic CSS import functionality
-- CSS bundling support
-- CSSStyleSheet mode for Shadow DOM
-- Custom transform function support
-- Include/exclude file patterns

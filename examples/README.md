@@ -10,6 +10,17 @@
 
 This directory contains example projects demonstrating how to use `rollup-plugin-require-css`.
 
+### Online Demo / 在线体验
+
+| Example | CodeSandbox | StackBlitz |
+|---------|-------------|------------|
+| [basic](./basic) | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/basic) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/basic) |
+| [css-modules](./css-modules) | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/css-modules) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/css-modules) |
+| [preprocessors](./preprocessors) | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/preprocessors) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/preprocessors) |
+| [postcss](./postcss) | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/postcss) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/postcss) |
+| [code-splitting](./code-splitting) | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/code-splitting) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/code-splitting) |
+| [shadow-dom](./shadow-dom) | [Open →](https://codesandbox.io/s/github/saqqdy/rollup-plugin-require-css/tree/master/examples/shadow-dom) | [Open →](https://stackblitz.com/github/saqqdy/rollup-plugin-require-css?file=examples/shadow-dom) |
+
 ### Examples Overview
 
 | Example | Description | Features |

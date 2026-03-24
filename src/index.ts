@@ -559,7 +559,7 @@ export default function requireCSS(options: Options = {}): Plugin {
 				const extractedStyles: string[] = []
 
 				styles.forEach((css, styleId) => {
-					if (!modules[styleId] && moduleIds.includes(styleId)) {
+					if (moduleIds.includes(styleId)) {
 						extractedStyles.push(css)
 					}
 				})
@@ -621,9 +621,17 @@ export default function requireCSS(options: Options = {}): Plugin {
 
 		api,
 
-		resolveId(_source, _importer, resolveOptions) {
+		resolveId(source, _importer, resolveOptions) {
 			if ((resolveOptions as any)?.attributes?.type === 'css') {
 				return null
+			}
+			// Resolve mount-style from user's node_modules (use ESM version for default export)
+			if (source === 'mount-style') {
+				try {
+					return require.resolve('mount-style/dist/index.mjs')
+				} catch {
+					return { id: 'mount-style', external: true }
+				}
 			}
 			return null
 		}
